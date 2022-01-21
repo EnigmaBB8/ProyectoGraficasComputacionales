@@ -10,7 +10,7 @@ WebGL (Web Graphics Library) is a JavaScript API for rendering **high-performanc
 
 ## THREE.JS
 
-Three.js is a lightweight library written in JavaScript for creating and displaying animated 3D computer graphics in a Web browser and can be used in conjunction with the HTML5, SVG, or WebGL canvas element.
+Three.js is a lightweight library written in JavaScript for creating and displaying **animated 3D computer** graphics in a Web browser and can be used in conjunction with the HTML5, SVG, or WebGL canvas element.
   
-##CREDITS AND BIBLIOGRAPHY
+## CREDITS AND BIBLIOGRAPHY
   * https://threejs.org
