@@ -32,7 +32,7 @@ Express was used for this project, which is a minimal and flexible Node.js web a
 Orbit controls allow the camera to orbit around a target.
 To use this, as with all files in the /examples directory, you will have to include the file separately in your HTML.
 
-## Global Variables
+## GLOBAL VARIABLES
 
 To be able to visualize a 3D scene we need a scene, a camera and a render, that is why the following global variables were declared to control not only what is going to be shown but how
  - let scene;
