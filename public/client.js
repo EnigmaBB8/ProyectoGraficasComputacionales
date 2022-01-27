@@ -38,19 +38,52 @@ renderer.setClearColor(0x000000, 0.0);
 
 //To maket the structure of the Earth
 const earthGeometry = new THREE.SphereGeometry(0.6, 32, 32);
+const cloudGeometry = new THREE.SphereGeometry(0.63, 32, 32);
+const startGeometry = new THREE.SphereGeometry(80, 64, 64);
 
 const earthMaterial = new THREE.MeshPhongMaterial({
     roughness: 1,
     metalness: 0,
+    map : THREE.ImageUtils.loadTexture('texture/earthmap1k.jpg'),
+    bumpMap : THREE.ImageUtils.loadTexture('texture/earthbump.jpg'),
+    bumpScale: 0.3
+});
+const cloudMaterial = new THREE.MeshPhongMaterial({
+    map : THREE.ImageUtils.loadTexture('texture/earthCloud.png'),
+    transparent: true
+});
+const startMaterial = new THREE.MeshBasicMaterial({
+    map : THREE.ImageUtils.loadTexture('texture/galaxy.png'),
+    side: THREE.BackSide
 });
 
 //The real way of the Earth
 const earthMesh = new THREE.Mesh(earthGeometry, earthMaterial);
 scene.add(earthMesh);
+const cloudMesh = new THREE.Mesh(cloudGeometry, cloudMaterial);
+scene.add(cloudMesh);
+const startMesh = new THREE.Mesh(startGeometry, startMaterial);
+scene.add(startMesh);
 
-//SOON 22
+//This is the light source 
 const ambientlight = new THREE.AmbientLight(0xffffff, 0.2);
 scene.add(ambientlight);
 
+//To make more ligth in our objetc we use a pointLight
+const pointLight = new THREE.PointLight(0xffffff, 1);
+pointLight.position.set(5,3,5);
+scene.add(pointLight);
 
-renderer.render(scene, camera);
+//This function will run in each frame to animate the Earth
+const animate = () =>{
+    requestAnimationFrame(animate);
+    earthMesh.rotation.y -= 0.0015;
+    cloudMesh.rotation.y -= 0.0015;
+    startMesh.rotation.y -= 0.002;
+    render();
+}
+const render = () =>{
+    renderer.render(scene, camera);
+}
+
+animate();
