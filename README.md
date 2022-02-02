@@ -101,11 +101,11 @@ MeshPhongMaterial: A material for shiny surfaces with specular highlights. Const
 MeshPhongMaterial( parameters : Object )
 ```
 The propiertes that were used were:
-** **roughness**
-** **metalness**
-** **map:** The color map. Default is null. The texture map color is modulated by the diffuse .color.
-** **bumpMap:** The texture to create a bump map. The black and white values map to the perceived depth in relation to the lights. Bump doesn't actually affect the geometry of the object, only the lighting. If a normal map is defined this will be ignored. (This only were used for the Earth)
-** **bumpScale:** How much the bump map affects the material. Typical ranges are 0-1. Default is 1.(This only were used for the Earth)
+* **roughness**
+* **metalness**
+* **map:** The color map. Default is null. The texture map color is modulated by the diffuse .color.
+* **bumpMap:** The texture to create a bump map. The black and white values map to the perceived depth in relation to the lights. Bump doesn't actually affect the geometry of the object, only the lighting. If a normal map is defined this will be ignored. (This only were used for the Earth)
+* **bumpScale:** How much the bump map affects the material. Typical ranges are 0-1. Default is 1.(This only were used for the Earth)
   Code example
 ```
 const earthMaterial = new THREE.MeshPhongMaterial({
@@ -123,8 +123,8 @@ Mesh: Class representing triangular polygon mesh based objects. Also serves as a
 Mesh( geometry : BufferGeometry, material : Material )
 ```
 The propiertes that were used were
-** **geometry** — (optional) an instance of BufferGeometry. Default is a new BufferGeometry.
-** **material** — (optional) a single or an array of Material. Default is a new MeshBasicMaterial
+* **geometry** — (optional) an instance of BufferGeometry. Default is a new BufferGeometry.
+* **material** — (optional) a single or an array of Material. Default is a new MeshBasicMaterial
   Code example
 ```
 const earthMesh = new THREE.Mesh(earthGeometry, earthMaterial);
