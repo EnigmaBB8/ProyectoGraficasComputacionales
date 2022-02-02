@@ -75,12 +75,10 @@ renderer.setClearColor(0x000000, 0.0);
 
 ### ORBITCONTROL
 Orbit controls allow the camera to orbit around a target. Constructor
-```
-OrbitControls( object : Camera, domElement : HTMLDOMElement )
-```
 * **object** - (required) The camera to be controlled. The camera must not be a child of another object, unless that object is the scene itself.
 * **domElement** The HTML element used for event listeners.
 ```
+OrbitControls( object : Camera, domElement : HTMLDOMElement )
 ```
 
 ### EARTH AND PLANETS
@@ -152,6 +150,67 @@ const starMaterial = new THREE.MeshBasicMaterial({
 });
 ```
 
+## LIGHT
+The lights used in the project were diverse so that each planet could be seen. Throughout the animation, the further away the planet is, the light decreases. The following functions for the implementation of the light that were used are the following
+
+* **_AmbientLight_**
+THREE.AmbientLight: This light globally illuminates all objects in the scene equally. This light cannot be used to cast shadows as it does not have a direction. Constructor
+```
+AmbientLight( color : Integer, intensity : Float )
+```
+* **color** - (optional) Numeric value of the RGB component of the color. Default is 0xffffff.
+* **intensity** - (optional) Numeric value of the light's strength/intensity. Default is 1.
+
+* **_PointLight_**
+THREE.PointLight: A light that gets emitted from a single point in all directions. A common use case for this is to replicate the light emitted from a bare lightbulb. Constructor
+```
+PointLight( color : Integer, intensity : Float, distance : Number, decay : Float )
+```
+* **color** - (optional) hexadecimal color of the light. Default is 0xffffff (white).
+* **intensity** - (optional) numeric value of the light's strength/intensity. Default is 1.
+* **distance** - Maximum range of the light. Default is 0 (no limit).
+* **decay** - The amount the light dims along the distance of the light. Default is 1. For physically 
+
+* **_PointLightHelper_**
+THREE.PointLightHelper: This displays a helper object consisting of a spherical Mesh for visualizing a PointLight. Constructor
+```
+PointLightHelper( light : PointLight, sphereSize : Float, color : Hex )
+```
+* **light** -- The light to be visualized. 
+* **sphereSize** -- (optional) The size of the sphere helper. Default is 1.
+* **color** -- (optional) if this is not the set the helper will take the color of the light.
+
+## EVENT CONTROL
+For when the cursor is made to move away from the image, the scene must be handled, that is why the _element.addEventListener_ method was used. Register an event to a specific object. The specific object can be a simple element in a file, the document itself, a window, or an XMLHttpRequest.
+Code
+```
+window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    render();
+}, false);
+```
+
+## ANIMATE FUNCTION
+The _Animate_ function is the most important because here we will be using the following methods y propierties
+* **requestAnimationFrame():** informs the browser that you want to perform an animation and requests that the browser schedule the window to repaint for the next animation cycle.
+* **.rotation:** Object's local rotation (see Euler angles), in radians. In this case all the objects rotate in its axes _y_
+* **controls.update():** Required if controls.enableDamping or controls.autoRotate are set to true
+* **render():** Render the whole scene
+Code
+```
+const animate = () => {
+    requestAnimationFrame(animate);
+    starMesh.rotation.y -= 0.002;
+    earthMesh.rotation.y -= 0.0015;
+    cloudMesh.rotation.y -= 0.001; 
+    controls.update();
+    render();
+    stats.update();
+};
+```
+
 ## BIBLIOGRAPHY
 * https://threejs.org
 * https://developer.mozilla.org/es/docs/Learn/Server-side/Express_Nodejs/Introduction
@@ -161,3 +220,9 @@ const starMaterial = new THREE.MeshBasicMaterial({
 * https://threejs.org/docs/#api/en/geometries/SphereGeometry
 * https://threejs.org/docs/#api/en/materials/MeshPhongMaterial
 * https://threejs.org/docs/#api/en/objects/Mesh
+* https://threejs.org/docs/#api/en/lights/AmbientLight
+* https://threejs.org/docs/#api/en/lights/PointLight
+* https://threejs.org/docs/#api/en/helpers/PointLightHelper
+* https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener
+* https://developer.mozilla.org/es/docs/Web/API/Window/requestAnimationFrame
+* https://threejs.org/docs/#api/en/core/Object3D.rotation
