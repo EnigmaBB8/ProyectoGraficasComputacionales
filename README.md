@@ -81,6 +81,7 @@ OrbitControls( object : Camera, domElement : HTMLDOMElement )
 * **object** - (required) The camera to be controlled. The camera must not be a child of another object, unless that object is the scene itself.
 * **domElement** The HTML element used for event listeners.
 ```
+```
 
 ### EARTH AND PLANETS
 To simulate a planet, different resources were used:
