@@ -1,5 +1,4 @@
-# Computer Graphics Project
-## José Manuel Cruz Gil A01747740
+# Computer Graphics Project                José Manuel Cruz Gil A01747740
 
 The project shows a scenario where the Earth will be attacked by various forces, the further you go with the cursor, the more threats you will be able to detect. Do you want to know what they are?
 
