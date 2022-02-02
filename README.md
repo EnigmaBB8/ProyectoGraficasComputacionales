@@ -23,6 +23,13 @@ import * as THREE from '/build/three.module.js';
 ```
 
 ## EXPRESS
+Express is the most popular Node web framework, and is the underlying library for a large number of other popular Node web frameworks. To import it into the project the following line was written in the server.js file
+```
+const express = require('express');
+const app = express();
+const path = require('path');
+```
 
 ## Bibliography
 * https://threejs.org
+* https://developer.mozilla.org/es/docs/Learn/Server-side/Express_Nodejs/Introduction
