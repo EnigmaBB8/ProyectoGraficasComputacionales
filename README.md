@@ -81,7 +81,9 @@ OrbitControls( object : Camera, domElement : HTMLDOMElement )
 
 ### EARTH AND PLANETS
 To simulate a planet, different resources were used:
-**Geometry** SphereGeometry: A class for generating sphere geometries. Constructor
+
+* **Geometry** 
+SphereGeometry: A class for generating sphere geometries. Constructor
 ```
 SphereGeometry(radius : Float, widthSegments : Integer, heightSegments : Integer, phiStart : Float, phiLength : Float, thetaStart : Float, thetaLength : Float)
 ```
@@ -90,6 +92,20 @@ Code example
 const earthGeometry = new THREE.SphereGeometry(0.3, 32, 32);
 ```
 
+* **Material** 
+MeshPhongMaterial: A material for shiny surfaces with specular highlights. Constructor
+```
+MeshPhongMaterial( parameters : Object )
+```
+The propiertes that were used were:
+** **roughness**
+** **metalness**
+** **map:** The color map. Default is null. The texture map color is modulated by the diffuse .color.
+** **bumpMap:** The texture to create a bump map. The black and white values map to the perceived depth in relation to the lights. Bump doesn't actually affect the geometry of the object, only the lighting. If a normal map is defined this will be ignored. (This only were used for the Earth)
+** **bumpScale:** How much the bump map affects the material. Typical ranges are 0-1. Default is 1.(This only were used for the Earth)
+
+* **Mesh** 
+
 
 ## BIBLIOGRAPHY
 * https://threejs.org
@@ -97,3 +113,4 @@ const earthGeometry = new THREE.SphereGeometry(0.3, 32, 32);
 * https://threejs.org/docs/#api/en/cameras/PerspectiveCamera
 * https://threejs.org/docs/#api/en/renderers/WebGLRenderer
 * https://threejs.org/docs/#examples/en/controls/OrbitControls
+* https://threejs.org/docs/#api/en/geometries/SphereGeometry
