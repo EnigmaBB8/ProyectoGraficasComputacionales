@@ -36,9 +36,7 @@ const app = express();
 const path = require('path');
 ```
 
-## CODE
-
-### GLOBAL VARIABLES 
+## GLOBAL VARIABLES 
 In order to have our 3D scene we must have 3 basic elements and they are the camera, the scene and the render. The following lines initialize these elements
 ```
 let scene;
@@ -46,7 +44,7 @@ let camera;
 let renderer;
 ```
 
-### CAMERA SETUP 
+## CAMERA SETUP 
 For camera setup we use PerspectiveCamera. This projection mode is designed to mimic the way the human eye sees. It is the most common projection mode used to render a 3D scene. Constructor
 ```
 PerspectiveCamera( fov : Number, aspect : Number, near : Number, far : Number )
@@ -57,7 +55,7 @@ PerspectiveCamera( fov : Number, aspect : Number, near : Number, far : Number )
 * **far** — Camera frustum far plane.
 
 
-### RENDERER SETUP 
+## RENDERER SETUP 
 Constructor
 ```
 WebGLRenderer( parameters : Object )
@@ -73,7 +71,7 @@ renderer.autoClear = false;
 renderer.setClearColor(0x000000, 0.0);
 ```
 
-### ORBITCONTROL
+## ORBITCONTROL
 Orbit controls allow the camera to orbit around a target. Constructor
 * **object** - (required) The camera to be controlled. The camera must not be a child of another object, unless that object is the scene itself.
 * **domElement** The HTML element used for event listeners.
@@ -81,10 +79,10 @@ Orbit controls allow the camera to orbit around a target. Constructor
 OrbitControls( object : Camera, domElement : HTMLDOMElement )
 ```
 
-### EARTH AND PLANETS
+## EARTH AND PLANETS
 To simulate a planet, different resources were used:
 
-* **_Geometry_** 
+### Geometry
 SphereGeometry: A class for generating sphere geometries. Constructor
 ```
 SphereGeometry(radius : Float, widthSegments : Integer, heightSegments : Integer, phiStart : Float, phiLength : Float, thetaStart : Float, thetaLength : Float)
@@ -94,7 +92,7 @@ SphereGeometry(radius : Float, widthSegments : Integer, heightSegments : Integer
 const earthGeometry = new THREE.SphereGeometry(0.3, 32, 32);
 ```
 
-* **_Material_** 
+### Material
 MeshPhongMaterial: A material for shiny surfaces with specular highlights. Constructor
 ```
 MeshPhongMaterial( parameters : Object )
@@ -116,7 +114,7 @@ const earthMaterial = new THREE.MeshPhongMaterial({
 });
 ```
 
-* **_Mesh_**
+### Mesh
 Mesh: Class representing triangular polygon mesh based objects. Also serves as a base for other classes such as SkinnedMesh. Constructor
 ```
 Mesh( geometry : BufferGeometry, material : Material )
@@ -130,7 +128,7 @@ const earthMesh = new THREE.Mesh(earthGeometry, earthMaterial);
 scene.add(earthMesh);
 ```
 
-* **_Clouds_**
+### Clouds
 The clouds of the planets were modeled in the same way as the planets, only in the **Material** the _transparent_ property was used
   Code example
 ```
@@ -140,7 +138,7 @@ const cloudMetarial = new THREE.MeshPhongMaterial({
 });
 ```
 
-* **_Galaxy_**
+### Galaxy
 The galaxy was modeled in the same way as the planets, only in the **Material** the _Sidet_ property was used
   Code example
 ```
@@ -153,7 +151,7 @@ const starMaterial = new THREE.MeshBasicMaterial({
 ## LIGHT
 The lights used in the project were diverse so that each planet could be seen. Throughout the animation, the further away the planet is, the light decreases. The following functions for the implementation of the light that were used are the following
 
-### _AmbientLight_
+### AmbientLigth
 THREE.AmbientLight: This light globally illuminates all objects in the scene equally. This light cannot be used to cast shadows as it does not have a direction. Constructor
 ```
 AmbientLight( color : Integer, intensity : Float )
@@ -161,7 +159,7 @@ AmbientLight( color : Integer, intensity : Float )
 *   **color** - (optional) Numeric value of the RGB component of the color. Default is 0xffffff.
 * **intensity** - (optional) Numeric value of the light's strength/intensity. Default is 1.
 
-### _PointLight_
+### PointLight
 THREE.PointLight: A light that gets emitted from a single point in all directions. A common use case for this is to replicate the light emitted from a bare lightbulb. Constructor
 ```
 PointLight( color : Integer, intensity : Float, distance : Number, decay : Float )
@@ -171,7 +169,7 @@ PointLight( color : Integer, intensity : Float, distance : Number, decay : Float
 * **distance** - Maximum range of the light. Default is 0 (no limit).
 * **decay** - The amount the light dims along the distance of the light. Default is 1. For physically 
 
-### _PointLightHelper_
+### PointLightHelper
 THREE.PointLightHelper: This displays a helper object consisting of a spherical Mesh for visualizing a PointLight. Constructor
 ```
 PointLightHelper( light : PointLight, sphereSize : Float, color : Hex )
@@ -226,3 +224,6 @@ const animate = () => {
 * https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener
 * https://developer.mozilla.org/es/docs/Web/API/Window/requestAnimationFrame
 * https://threejs.org/docs/#api/en/core/Object3D.rotation
+
+## CREDITS
+All the images were taken from the page https://www.pinterest.es 
