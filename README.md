@@ -50,11 +50,12 @@ let renderer;
 For camera setup we use PerspectiveCamera. This projection mode is designed to mimic the way the human eye sees. It is the most common projection mode used to render a 3D scene. Constructor
 ```
 PerspectiveCamera( fov : Number, aspect : Number, near : Number, far : Number )
-* fov — Camera frustum vertical field of view.
-* aspect — Camera frustum aspect ratio.
-* near — Camera frustum near plane.
-* far — Camera frustum far plane.
 ```
+* **fov** — Camera frustum vertical field of view.
+* **aspect** — Camera frustum aspect ratio.
+* **near** — Camera frustum near plane.
+* **far** — Camera frustum far plane.
+
 
 ## BIBLIOGRAPHY
 * https://threejs.org
