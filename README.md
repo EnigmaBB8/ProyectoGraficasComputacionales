@@ -153,7 +153,7 @@ const starMaterial = new THREE.MeshBasicMaterial({
 ## LIGHT
 The lights used in the project were diverse so that each planet could be seen. Throughout the animation, the further away the planet is, the light decreases. The following functions for the implementation of the light that were used are the following
 
-* **_AmbientLight_**
+### _AmbientLight_
 THREE.AmbientLight: This light globally illuminates all objects in the scene equally. This light cannot be used to cast shadows as it does not have a direction. Constructor
 ```
 AmbientLight( color : Integer, intensity : Float )
@@ -161,7 +161,7 @@ AmbientLight( color : Integer, intensity : Float )
 *   **color** - (optional) Numeric value of the RGB component of the color. Default is 0xffffff.
 * **intensity** - (optional) Numeric value of the light's strength/intensity. Default is 1.
 
-* **_PointLight_**
+### _PointLight_
 THREE.PointLight: A light that gets emitted from a single point in all directions. A common use case for this is to replicate the light emitted from a bare lightbulb. Constructor
 ```
 PointLight( color : Integer, intensity : Float, distance : Number, decay : Float )
@@ -171,7 +171,7 @@ PointLight( color : Integer, intensity : Float, distance : Number, decay : Float
 * **distance** - Maximum range of the light. Default is 0 (no limit).
 * **decay** - The amount the light dims along the distance of the light. Default is 1. For physically 
 
-* **_PointLightHelper_**
+### _PointLightHelper_
 THREE.PointLightHelper: This displays a helper object consisting of a spherical Mesh for visualizing a PointLight. Constructor
 ```
 PointLightHelper( light : PointLight, sphereSize : Float, color : Hex )
