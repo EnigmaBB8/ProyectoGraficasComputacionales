@@ -158,7 +158,7 @@ THREE.AmbientLight: This light globally illuminates all objects in the scene equ
 ```
 AmbientLight( color : Integer, intensity : Float )
 ```
-* **color** - (optional) Numeric value of the RGB component of the color. Default is 0xffffff.
+*   **color** - (optional) Numeric value of the RGB component of the color. Default is 0xffffff.
 * **intensity** - (optional) Numeric value of the light's strength/intensity. Default is 1.
 
 * **_PointLight_**
