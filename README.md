@@ -72,10 +72,24 @@ renderer.autoClear = false;
 renderer.setClearColor(0x000000, 0.0);
 ```
 ### ORBITCONTROL
-Orbit controls allow the camera to orbit around a target.
+Orbit controls allow the camera to orbit around a target. Constructor
 ```
-const controls = new OrbitControls(camera, renderer.domElement);
+OrbitControls( object : Camera, domElement : HTMLDOMElement )
 ```
+* **object** - (required) The camera to be controlled. The camera must not be a child of another object, unless that object is the scene itself.
+* **domElement** The HTML element used for event listeners.
+
+### EARTH AND PLANETS
+To simulate a planet, different resources were used:
+**Geometry** SphereGeometry: A class for generating sphere geometries. Constructor
+```
+SphereGeometry(radius : Float, widthSegments : Integer, heightSegments : Integer, phiStart : Float, phiLength : Float, thetaStart : Float, thetaLength : Float)
+```
+Code example
+```
+const earthGeometry = new THREE.SphereGeometry(0.3, 32, 32);
+```
+
 
 ## BIBLIOGRAPHY
 * https://threejs.org
