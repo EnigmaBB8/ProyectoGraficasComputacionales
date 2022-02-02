@@ -191,10 +191,6 @@ window.addEventListener('resize', () => {
     render();
 }, false);
 
-// current fps
-const stats = Stats();
-document.body.appendChild(stats.dom);
-
 //---------------------------Settings (function animate) for the rotation of each planet---------------------------
 const animate = () => {
     requestAnimationFrame(animate);
@@ -210,7 +206,6 @@ const animate = () => {
     
     controls.update();
     render();
-    stats.update();
 };
 
 //---------------------------Settings for rendering the scene---------------------------
