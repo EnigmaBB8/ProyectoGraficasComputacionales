@@ -122,7 +122,7 @@ Mesh: Class representing triangular polygon mesh based objects. Also serves as a
 ```
 Mesh( geometry : BufferGeometry, material : Material )
 ```
-The propiertes that were used were:
+The propiertes that were used were
 ** **geometry** — (optional) an instance of BufferGeometry. Default is a new BufferGeometry.
 ** **material** — (optional) a single or an array of Material. Default is a new MeshBasicMaterial
   Code example
