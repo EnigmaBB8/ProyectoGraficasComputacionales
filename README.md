@@ -56,6 +56,7 @@ PerspectiveCamera( fov : Number, aspect : Number, near : Number, far : Number )
 * **near** — Camera frustum near plane.
 * **far** — Camera frustum far plane.
 
+
 ### RENDERER SETUP 
 Constructor
 ```
@@ -71,6 +72,7 @@ renderer.setPixelRatio((window.devicePixelRatio) ? window.devicePixelRatio : 1);
 renderer.autoClear = false;
 renderer.setClearColor(0x000000, 0.0);
 ```
+
 ### ORBITCONTROL
 Orbit controls allow the camera to orbit around a target. Constructor
 ```
@@ -78,6 +80,7 @@ OrbitControls( object : Camera, domElement : HTMLDOMElement )
 ```
 * **object** - (required) The camera to be controlled. The camera must not be a child of another object, unless that object is the scene itself.
 * **domElement** The HTML element used for event listeners.
+
 
 ### EARTH AND PLANETS
 To simulate a planet, different resources were used:
@@ -87,7 +90,7 @@ SphereGeometry: A class for generating sphere geometries. Constructor
 ```
 SphereGeometry(radius : Float, widthSegments : Integer, heightSegments : Integer, phiStart : Float, phiLength : Float, thetaStart : Float, thetaLength : Float)
 ```
-Code example
+  Code example
 ```
 const earthGeometry = new THREE.SphereGeometry(0.3, 32, 32);
 ```
@@ -103,8 +106,30 @@ The propiertes that were used were:
 ** **map:** The color map. Default is null. The texture map color is modulated by the diffuse .color.
 ** **bumpMap:** The texture to create a bump map. The black and white values map to the perceived depth in relation to the lights. Bump doesn't actually affect the geometry of the object, only the lighting. If a normal map is defined this will be ignored. (This only were used for the Earth)
 ** **bumpScale:** How much the bump map affects the material. Typical ranges are 0-1. Default is 1.(This only were used for the Earth)
+  Code example
+```
+const earthMaterial = new THREE.MeshPhongMaterial({
+    roughness: 1,
+    metalness: 0,
+    map: THREE.ImageUtils.loadTexture('texture/earthmap1k.jpg'),
+    bumpMap: THREE.ImageUtils.loadTexture('texture/earthbump.jpg'),
+    bumpScale: 0.3
+});
+```
 
-* **Mesh** 
+* **Mesh**
+Mesh: Class representing triangular polygon mesh based objects. Also serves as a base for other classes such as SkinnedMesh. Constructor
+```
+Mesh( geometry : BufferGeometry, material : Material )
+```
+The propiertes that were used were:
+** **geometry** — (optional) an instance of BufferGeometry. Default is a new BufferGeometry.
+** **material** — (optional) a single or an array of Material. Default is a new MeshBasicMaterial
+  Code example
+```
+const earthMesh = new THREE.Mesh(earthGeometry, earthMaterial);
+scene.add(earthMesh);
+```
 
 
 ## BIBLIOGRAPHY
@@ -114,3 +139,5 @@ The propiertes that were used were:
 * https://threejs.org/docs/#api/en/renderers/WebGLRenderer
 * https://threejs.org/docs/#examples/en/controls/OrbitControls
 * https://threejs.org/docs/#api/en/geometries/SphereGeometry
+* https://threejs.org/docs/#api/en/materials/MeshPhongMaterial
+* https://threejs.org/docs/#api/en/objects/Mesh
