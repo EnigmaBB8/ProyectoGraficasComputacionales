@@ -27,6 +27,7 @@ app.use(express.static(__dirname + '/public'))
 app.use('/build/', express.static(path.join(__dirname, 'node_modules/three/build')));
 app.use('/jsm/', express.static(path.join(__dirname, 'node_modules/three/examples/jsm')));
 ```
+
 ### EXPRESS
 Express is the most popular Node web framework, and is the underlying library for a large number of other popular Node web frameworks. To import it into the project the following line was written in the server.js file
 ```
@@ -34,8 +35,26 @@ const express = require('express');
 const app = express();
 const path = require('path');
 ```
+
 ## CODE
 
+### GLOBAL VARIABLES 
+In order to have our 3D scene we must have 3 basic elements and they are the camera, the scene and the render. The following lines initialize these elements
+```
+let scene;
+let camera;
+let renderer;
+```
+
+### CAMERA SETUP 
+For camera setup we use PerspectiveCamera. This projection mode is designed to mimic the way the human eye sees. It is the most common projection mode used to render a 3D scene. Constructor
+```
+PerspectiveCamera( fov : Number, aspect : Number, near : Number, far : Number )
+* fov — Camera frustum vertical field of view.
+* aspect — Camera frustum aspect ratio.
+* near — Camera frustum near plane.
+* far — Camera frustum far plane.
+```
 
 ## BIBLIOGRAPHY
 * https://threejs.org
