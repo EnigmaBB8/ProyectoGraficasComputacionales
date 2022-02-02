@@ -141,6 +141,16 @@ const cloudMetarial = new THREE.MeshPhongMaterial({
 });
 ```
 
+* **_Galaxy_**
+The galaxy was modeled in the same way as the planets, only in the **Material** the _Sidet_ property was used
+  Code example
+```
+const starMaterial = new THREE.MeshBasicMaterial({
+    map : THREE.ImageUtils.loadTexture('texture/galaxy.png'),
+    side: THREE.BackSide
+});
+```
+
 ## BIBLIOGRAPHY
 * https://threejs.org
 * https://developer.mozilla.org/es/docs/Learn/Server-side/Express_Nodejs/Introduction
