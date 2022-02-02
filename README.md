@@ -13,6 +13,10 @@ WebGL (Web Graphics Library) is a standard specification that defines an API imp
 ```
 <canvas class="webgl"></canvas>
 ```
+And in the client.js file
+```
+const canvas = document.querySelector('.webgl');
+```
 
 ## Bibliography
 * Comenta a otros sobre este proyecto 📢
