@@ -1,7 +1,7 @@
 # Computer Graphics Project
 _Jose Manuel Cruz Gil A01747740_
 
-## Idea
+## IDEA
 The idea of the following project is about showing the Earth in a 3D scene, and other planets that I invented. These planets can be seen while you move the cursor backwards, you can also see the planets and move them on their axis of rotation. The planets have their own rotation. The following resources were used in the development of this project
 
 ## RESOURCES
@@ -21,7 +21,12 @@ Three.js is a lightweight library written in JavaScript for creating and display
 ```
 import * as THREE from '/build/three.module.js';
 ```
-
+And in the server.js file these lines of code were included
+```
+app.use(express.static(__dirname + '/public'))
+app.use('/build/', express.static(path.join(__dirname, 'node_modules/three/build')));
+app.use('/jsm/', express.static(path.join(__dirname, 'node_modules/three/examples/jsm')));
+```
 ### EXPRESS
 Express is the most popular Node web framework, and is the underlying library for a large number of other popular Node web frameworks. To import it into the project the following line was written in the server.js file
 ```
@@ -29,7 +34,9 @@ const express = require('express');
 const app = express();
 const path = require('path');
 ```
+## CODE
 
-## Bibliography
+
+## BIBLIOGRAPHY
 * https://threejs.org
 * https://developer.mozilla.org/es/docs/Learn/Server-side/Express_Nodejs/Introduction
