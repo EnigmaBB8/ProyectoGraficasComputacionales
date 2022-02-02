@@ -219,6 +219,7 @@ const animate = () => {
 * https://threejs.org/docs/#api/en/materials/MeshPhongMaterial
 * https://threejs.org/docs/#api/en/objects/Mesh
 * https://threejs.org/docs/#api/en/lights/AmbientLight
+* https://www.youtube.com/watch?v=lkIVNrMhCwU
 * https://threejs.org/docs/#api/en/lights/PointLight
 * https://threejs.org/docs/#api/en/helpers/PointLightHelper
 * https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener
