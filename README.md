@@ -85,7 +85,7 @@ OrbitControls( object : Camera, domElement : HTMLDOMElement )
 ### EARTH AND PLANETS
 To simulate a planet, different resources were used:
 
-* **Geometry** 
+* **_Geometry_** 
 SphereGeometry: A class for generating sphere geometries. Constructor
 ```
 SphereGeometry(radius : Float, widthSegments : Integer, heightSegments : Integer, phiStart : Float, phiLength : Float, thetaStart : Float, thetaLength : Float)
@@ -95,7 +95,7 @@ SphereGeometry(radius : Float, widthSegments : Integer, heightSegments : Integer
 const earthGeometry = new THREE.SphereGeometry(0.3, 32, 32);
 ```
 
-* **Material** 
+* **_Material_** 
 MeshPhongMaterial: A material for shiny surfaces with specular highlights. Constructor
 ```
 MeshPhongMaterial( parameters : Object )
@@ -117,7 +117,7 @@ const earthMaterial = new THREE.MeshPhongMaterial({
 });
 ```
 
-* **Mesh**
+* **_Mesh_**
 Mesh: Class representing triangular polygon mesh based objects. Also serves as a base for other classes such as SkinnedMesh. Constructor
 ```
 Mesh( geometry : BufferGeometry, material : Material )
@@ -131,6 +131,15 @@ const earthMesh = new THREE.Mesh(earthGeometry, earthMaterial);
 scene.add(earthMesh);
 ```
 
+* **_Clouds_**
+The clouds of the planets were modeled in the same way as the planets, only in the **Material** the _transparent_ property was used
+  Code example
+```
+const cloudMetarial = new THREE.MeshPhongMaterial({
+    map: THREE.ImageUtils.loadTexture('texture/earthCloud.png'),
+    transparent: true,
+});
+```
 
 ## BIBLIOGRAPHY
 * https://threejs.org
