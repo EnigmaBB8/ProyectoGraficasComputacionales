@@ -56,7 +56,30 @@ PerspectiveCamera( fov : Number, aspect : Number, near : Number, far : Number )
 * **near** — Camera frustum near plane.
 * **far** — Camera frustum far plane.
 
+### RENDERER SETUP 
+Constructor
+```
+WebGLRenderer( parameters : Object )
+```
+The constructor also does not accept any parameters. In all cases, it will assume sensible defaults when parameters are missing. The following are valid parameters that we use in the project
+* **Canvas** - A canvas where the renderer draws its output. This corresponds to the domElement property below. If not passed in here, a new canvas element will be created.
+* **Antialias** - whether to perform antialiasing. The value is **true**
+The following methods and their respective values were also used
+```
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio((window.devicePixelRatio) ? window.devicePixelRatio : 1);
+renderer.autoClear = false;
+renderer.setClearColor(0x000000, 0.0);
+```
+### ORBITCONTROL
+Orbit controls allow the camera to orbit around a target.
+```
+const controls = new OrbitControls(camera, renderer.domElement);
+```
 
 ## BIBLIOGRAPHY
 * https://threejs.org
 * https://developer.mozilla.org/es/docs/Learn/Server-side/Express_Nodejs/Introduction
+* https://threejs.org/docs/#api/en/cameras/PerspectiveCamera
+* https://threejs.org/docs/#api/en/renderers/WebGLRenderer
+* https://threejs.org/docs/#examples/en/controls/OrbitControls
