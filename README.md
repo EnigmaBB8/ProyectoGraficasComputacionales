@@ -1,11 +1,8 @@
 # Computer Graphics Project
 
-The following project of the subject of computer graphics where various knowledge of programming, linear algebra, design, among others, will present the scenario of a planet Earth with a different design than what we are used to.
+The project shows a scenario where the Earth will be attacked by various forces, the further you go with the cursor, the more threats you will be able to detect. Do you want to know what they are?
 
 Throughout this file, the resources that were used will be documented to transmit to those who seek similar information.
-
-## INSPIRATION
-[Here](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.caracteristicas.co%2Fplaneta-tierra%2F&psig=AOvVaw0jccQN9QmfncRCfgYID-hZ&ust=1642826362571000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMiz6KGDwvUCFQAAAAAdAAAAABAD)
 
 ## ARCHITECTURE
 
@@ -27,7 +24,7 @@ Node.js technology was used for this project.Node.js is an open source, cross-pl
 
 Express was used for this project, which is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
 
-## OrbitControls
+## ORBITCONTROLS
 
 Orbit controls allow the camera to orbit around a target.
 To use this, as with all files in the /examples directory, you will have to include the file separately in your HTML.
@@ -39,7 +36,7 @@ To be able to visualize a 3D scene we need a scene, a camera and a render, that 
  - let camera;
  - let renderer;
 
-## PerspectiveCamera
+## PERSPECTIVECAMERA
 Camera that uses perspective projection. This projection mode is designed to mimic the way the human eye sees. It is the most common projection mode used for rendering a 3D scene.
 
 ### fov : Float
@@ -54,7 +51,7 @@ Camera frustum far plane. Default is 2000.
 ### aspect : Float
 Camera frustum aspect ratio, usually the canvas width / canvas height. Default is 1 (square canvas).
 
-## Earth
+## EARTH
 
 The following resources were used to model the Earth
 
