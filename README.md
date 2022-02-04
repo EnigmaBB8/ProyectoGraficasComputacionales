@@ -209,8 +209,8 @@ const animate = () => {
 };
 ```
 
-## SAMPLE VIDEO 
-[Video](http://www.dropwizard.io/1.0.2/docs/)
+## SAMPLE VIDEO AND IMAGES
+[Video](https://drive.google.com/drive/folders/16d6N9l1QyT3uRGUhJpxoMtHHCZ3OLTgh?usp=sharing)
 
 ## HOW TO SEE THIS PROJECT
 1. Clone this repository on your system
